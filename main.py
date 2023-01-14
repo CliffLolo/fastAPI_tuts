@@ -14,14 +14,14 @@ class Item(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Cliff": "Lolo"}
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+def read_item(item_id: int, optional_parameter: Union[str, None] = None):
+    return {"item_id": item_id, "optional_parameter": optional_parameter}
 
 
 @app.put("/items/{item_id}")
 def update_item(item_id: int, item: Item):
-    return {"item_name": item.name, "item_id": item_id}
+    return {"item_name": item.price, "item_id": item_id}
